@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Grocery List</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1> Insert Name</h1>
+        <div class="row">
+            <div>
+                <label for="first">Item</label>
+                <input id="first" name="first_name" type="text">
+            </div>
+        </div>
+        <button name="submit">Add Items</button>
+        <button name ="clear">Clear</button>
+        <ul class="hidden"></ul>
+
+    </div>
+</div>
+<script>
+    const firstName = document.getElementById('first');
+    const submitButton = document.querySelector('[name="submit"]');
+    const listContainer = document.querySelector('ul');
+    const clearButton = document.querySelector('[name = "clear"]');
+
+    clearButton.addEventListener('click', function (e){
+
+    }
+    submitButton.addEventListener('click', function (e) {
+        let first = firstName.value;
+
+        const listItem = document.createElement('li');
+        listItem.textContent = first;
+
+        listContainer.appendChild(listItem);
+        firstName.value = ''
+    });
+</script>
+</body>
+</html>
